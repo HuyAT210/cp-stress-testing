@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Local Stress Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Local C++ Stress Tester</h1>
+
+    <div class="input-group">
+        <label for="folderName">Session Folder Name:</label>
+        <input type="text" id="folderName" placeholder="session_name">
+    </div>
+
+    <div class="input-group">
+        <label for="genCode">Generator Code:</label>
+        <textarea id="genCode"></textarea>
+    </div>
+
+    <div class="input-group">
+        <label for="slowCode">Slow Solution Code:</label>
+        <textarea id="slowCode"></textarea>
+    </div>
+
+    <div class="input-group">
+        <label for="fastCode">Fast Solution Code:</label>
+        <textarea id="fastCode"></textarea>
+    </div>
+
+    <button id="runBtn">Run Stress Test</button>
+    <pre id="output"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

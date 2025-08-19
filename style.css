@@ -1,0 +1,75 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff5555;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #bbbbbb;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: monospace;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #ff5555;
+    box-shadow: 0 0 5px #ff5555;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #ff5555, #ff8800);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+pre {
+    background-color: #1e1e1e;
+    color: #00ff88;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
