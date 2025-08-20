@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Local Stress Tester</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Local C++ Stress Tester</h1>
@@ -15,22 +15,24 @@
 
     <div class="input-group">
         <label for="genCode">Generator Code:</label>
-        <textarea id="genCode"></textarea>
+        <div id="genCode" class="editor-container"></div>
     </div>
 
     <div class="input-group">
         <label for="slowCode">Slow Solution Code:</label>
-        <textarea id="slowCode"></textarea>
+        <div id="slowCode" class="editor-container"></div>
     </div>
 
     <div class="input-group">
         <label for="fastCode">Fast Solution Code:</label>
-        <textarea id="fastCode"></textarea>
+        <div id="fastCode" class="editor-container"></div>
     </div>
 
     <button id="runBtn">Run Stress Test</button>
     <pre id="output"></pre>
 
-    <script src="script.js"></script>
+    <!-- Monaco Editor loader -->
+    <script src="/static/monaco/vs/loader.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

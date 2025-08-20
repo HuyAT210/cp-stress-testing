@@ -15,7 +15,7 @@ app = FastAPI(title="Local Stress Tester")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:3000"], 
+    allow_origins=["http://127.0.0.1:3000","http://localhost:3000"], 
     allow_credentials=True,                 
     allow_methods=["*"],                      
     allow_headers=["*"],                     
@@ -62,13 +62,16 @@ def run_stress_test(input: CodeInput):
     ok2, msg2 = compile_cpp(slow_file, os.path.join(session_dir, "slow"))
     ok3, msg3 = compile_cpp(fast_file, os.path.join(session_dir, "fast"))
     output_log.extend([msg1, msg2, msg3])
+    print(f"Compiled")
 
     if not (ok1 and ok2 and ok3):
+        print("Failed")
         return {"output": "\n".join(output_log)}
 
     # Run stress testing loop
     try:
         for i in range(1, 11):  # 10 test cases
+            print(f"Testing test {i}")
             # generate input
             gen_out = subprocess.check_output([os.path.join(session_dir, "gen")])
 
@@ -86,7 +89,7 @@ def run_stress_test(input: CodeInput):
 
     except Exception as e:
         output_log.append(f"Error during testing: {str(e)}")
-
+    print("Reached the end")
     return {"output": "\n".join(output_log)}
 
 # ---------- Run ----------
