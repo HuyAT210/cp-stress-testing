@@ -33,7 +33,7 @@ require(["vs/editor/editor.main"], function () {
             "\n\nFast Solution:\n" + fastCode;
     });
     document.getElementById("runBtn").addEventListener("click", async () => {
-        const folderName = "default"; // adjust if you add input later
+        const folderName = document.getElementById("folderName").value;
         const genCode = window.genEditor.getValue();
         const slowCode = window.slowEditor.getValue();
         const fastCode = window.fastEditor.getValue();
