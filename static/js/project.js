@@ -22,7 +22,6 @@ require(["vs/editor/editor.main"], async function () {
         const fastCode = window.fastEditor.getValue();
 
         document.getElementById("output").textContent = "Running...";
-        
         try {
             const response = await fetch("http://127.0.0.1:8000/run", {
                 method: "POST",
