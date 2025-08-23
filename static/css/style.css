@@ -1,0 +1,211 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff5555;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #bbbbbb;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: monospace;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #ff5555;
+    box-shadow: 0 0 5px #ff5555;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #ff5555, #ff8800);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+pre {
+    background-color: #1e1e1e;
+    color: #00ff88;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+.createProjectBtn{
+    display: flex;
+}
+
+/* Monaco container styling (moved from inline styles) */
+.editor-container {
+    width: 100%;
+    height: 250px; /* adjust height */
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    gap: 10px;
+}
+
+
+/* Modal background overlay */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content box */
+.modal-content {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    border: 1px solid #333;
+    box-shadow: 0 0 10px #ff5555;
+    animation: popupFade 0.25s ease;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #ff5555;
+    font-size: 1.4em;
+}
+
+/* Input inside modal */
+#projectNameInput {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+#projectNameInput:focus {
+    border-color: #ff5555;
+    box-shadow: 0 0 5px #ff5555;
+    outline: none;
+}
+
+/* Buttons container */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Cancel button matches dark theme */
+#cancelBtn {
+    background: #333;
+    color: #bbb;
+}
+
+#cancelBtn:hover {
+    background: #444;
+    transform: scale(1.05);
+}
+
+/* Confirm button uses existing gradient */
+#confirmBtn {
+    background: linear-gradient(90deg, #ff5555, #ff8800);
+    color: white;
+}
+
+#confirmBtn:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Simple fade-in animation */
+@keyframes popupFade {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Recent projects list */
+#recentProjectsList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual recent project items */
+.recent-project-item {
+    background: #1e1e1e;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Hover effect like buttons */
+.recent-project-item:hover {
+    background: linear-gradient(90deg, #ff5555, #ff8800);
+    color: white;
+    transform: scale(1.03);
+    border-color: transparent;
+}
