@@ -73,8 +73,8 @@ pre {
     font-family: monospace;
     white-space: pre-wrap;
 }
-.createProjectBtn{
-    display: flex;
+#createProjectBtn{
+    width: 100%;
 }
 
 /* Monaco container styling (moved from inline styles) */
