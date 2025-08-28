@@ -1,22 +1,19 @@
 require.config({ paths: { vs: "/static/monaco/vs" } });
 
 require(["vs/editor/editor.main"], async function () {
-    // Create editors with empty values first
-    window.genEditor = createEditor("genCode", "");
-    window.slowEditor = createEditor("slowCode", "");
-    window.fastEditor = createEditor("fastCode", "");
+    const currentTheme = localStorage.getItem("editorTheme") || "vs-dark";
+
+    // Create editors with selected theme
+    window.genEditor = createEditor("genCode", "", currentTheme);
+    window.slowEditor = createEditor("slowCode", "", currentTheme);
+    window.fastEditor = createEditor("fastCode", "", currentTheme);
 
     const projectName = getProjectName();
-
-    // Always load project files from backend
     await loadProjectFiles(projectName);
-
-    // Show project name at top
     setProjectTitle(projectName);
 
-    // Run button handler
     document.getElementById("runBtn").addEventListener("click", async () => {
-        const folderName = `${projectName}`;
+        const folderName = projectName;
         const genCode = window.genEditor.getValue();
         const slowCode = window.slowEditor.getValue();
         const fastCode = window.fastEditor.getValue();
@@ -42,14 +39,15 @@ function getProjectName() {
     return params.get("name");
 }
 
-function createEditor(elementId, defaultValue) {
+function createEditor(elementId, defaultValue, theme) {
     return monaco.editor.create(document.getElementById(elementId), {
         value: defaultValue,
         language: "cpp",
-        theme: "vs-dark",
+        theme: theme,
         automaticLayout: true
     });
 }
+
 
 async function loadProjectFiles(projectName) {
     try {
